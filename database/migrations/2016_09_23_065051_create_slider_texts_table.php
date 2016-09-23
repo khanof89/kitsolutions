@@ -15,7 +15,7 @@ class CreateSliderTextsTable extends Migration
     {
         Schema::create('slider_texts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('text');
+            $table->text('text');
             $table->integer('slider_id')->unsigned();
             $table->foreign('slider_id')->references('id')->on('sliders')->onDelete('cascade');
             $table->timestamps();
