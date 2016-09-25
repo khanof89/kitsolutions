@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('/','IndexController@index');
+Route::get('/', 'IndexController@index');
+
+  Route::get('shop', 'ShopController@index');
