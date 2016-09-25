@@ -1,16 +1,12 @@
 @extends('base')
 
 @section('content')
-
-
     <!-- WRAPPER -->
     <div class="wrapper">
-
         <!-- HEADER -->
         <header id="header" class="header-fullwidth">
             <div id="header-wrap">
                 <div class="container">
-
                     <!--LOGO-->
                     <div id="logo">
                         <a href="#" class="logo" data-dark-logo="images/logo-dark.png">
@@ -43,34 +39,8 @@
                     <!--END: TOP SEARCH -->
 
                     <!--NAVIGATION-->
+                    @include('menu')
 
-                    <div class="navbar-collapse collapse main-menu-collapse navigation-wrap">
-                        <div class="container">
-                            <nav id="mainMenu" class="main-menu mega-menu">
-                                <ul class="main-menu nav nav-pills">
-                                    @foreach($menus as $menu)
-                                        <li @if(count($menu->submenus)) class="dropdown" @endif>
-                                            <a href="{{$menu->url}}">
-                                                @if($menu->name == 'Home')
-                                                    <i class="fa fa-home"></i>@endif
-                                                {{$menu->name}}
-                                                @if(count($menu->submenus))
-                                                    <i class="fa fa-angle-down"></i>
-                                                @endif
-                                            </a>
-                                            @if(count($menu->submenus))
-                                                <ul class="dropdown-menu">
-                                                    @foreach($menu->submenus as $submenu)
-                                                        <li><a href="{{$submenu->url}}">{{$submenu->name}}</a></li>
-                                                    @endforeach
-                                                </ul>
-                                            @endif
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
                     <!--END: NAVIGATION-->
                 </div>
             </div>
@@ -110,7 +80,7 @@
 
 
         <!-- WELCOME -->
-        <section class="p-b-0">
+        {{--<section class="p-b-0">
             <div class="container">
                 <div class="heading heading-center m-b-40" data-animation="fadeInUp">
                     <h2>WELCOME TO THE WORLD OF POLO</h2>
@@ -122,7 +92,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>--}}
         <!-- END: WELCOME -->
 
         <!-- WHAT WE DO -->
@@ -133,44 +103,14 @@
                     <span class="lead">We provide high quality software development services on a broad range of hardware and software platforms. All our solutions are based on the new concepts in IT industry such as dynamic reports and integration with mobile applications. This allow us to build wide range of customers across the world.</span>
                 </div>
                 <div class="row">
+                    @foreach($services as $service)
                     <div class="col-md-4">
                         <div class="text-box" data-animation="fadeInUp" data-animation-delay="0">
-                            <h4>Networking Solutions</h4>
-                            <p>Lorem ipsum dolor sit amet, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis aliquam.</p>
+                            <h4>{{$service->heading}}</h4>
+                            <p>{{$service->description}}</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="text-box" data-animation="fadeInUp" data-animation-delay="200">
-                            <h4>Computer AMC</h4>
-                            <p>Lorem ipsum dolor sit amet, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis aliquam.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="text-box" data-animation="fadeInUp" data-animation-delay="400">
-                            <h4>Completely Leasing and Renting</h4>
-                            <p>Lorem ipsum dolor sit amet, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis aliquam.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="text-box" data-animation="fadeInUp" data-animation-delay="600">
-                            <h4>ABC</h4>
-                            <p>Lorem ipsum dolor sit amet, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis aliquam.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="text-box" data-animation="fadeInUp" data-animation-delay="800">
-                            <h4>ABC</h4>
-                            <p>Lorem ipsum dolor sit amet, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis aliquam.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="text-box" data-animation="fadeInUp" data-animation-delay="1000">
-                            <h4>ABC</h4>
-                            <p>Lorem ipsum dolor sit amet, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis aliquam.</p>
-                        </div>
-                    </div>
-
-
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -250,45 +190,18 @@
         <section class="parallax text-light p-t-150 p-b-150 background-overlay" style="background-image: url(/images/parallax/12.jpg);" data-stellar-background-ratio="0.6">
             <div class="container">
                 <div class="row">
+                    @foreach($statistics as $statistic)
                     <div class="col-md-3">
-
                         <div class="text-center">
-                            <div class="icon"><i class="fa fa-3x fa-code"></i></div>
-                            <div class="counter"> <span data-speed="3000" data-refresh-interval="50" data-to="12416" data-from="600" data-seperator="true"></span> </div>
+                            <div class="icon"><i class="{{$statistic->icon}}"></i></div>
+                            <div class="counter">
+                                <span data-speed="3000" data-refresh-interval="50" data-to="{{$statistic->count}}" data-from="600" data-seperator="true"></span>
+                            </div>
                             <div class="seperator seperator-small"></div>
-                            <p>LINES OF CODE</p>
+                            <p>{{$statistic->name}}</p>
                         </div>
                     </div>
-
-                    <div class="col-md-3">
-
-                        <div class="text-center">
-                            <div class="icon"><i class="fa fa-3x fa-coffee"></i></div>
-                            <div class="counter"> <span data-speed="4500" data-refresh-interval="23" data-to="365" data-from="100" data-seperator="true"></span> </div>
-                            <div class="seperator seperator-small"></div>
-                            <p>CUPS OF COFFEE</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-
-                        <div class="text-center">
-                            <div class="icon"><i class="fa fa-3x fa-rocket"></i></div>
-                            <div class="counter"> <span data-speed="3000" data-refresh-interval="12" data-to="114" data-from="50" data-seperator="true"></span> </div>
-                            <div class="seperator seperator-small"></div>
-                            <p>FINISHED PROJECTS</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-
-                        <div class="text-center">
-                            <div class="icon"><i class="fa fa-3x fa-smile-o"></i></div>
-                            <div class="counter"> <span data-speed="4550" data-refresh-interval="50" data-to="14825" data-from="48" data-seperator="true"></span> </div>
-                            <div class="seperator seperator-small"></div>
-                            <p>SATISFIED CLIENTS</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -309,22 +222,19 @@
                     <!-- Blog post-->
                     <div class="post-content  post-block post-modern post-3-columns post-light-background">
                         <!-- Blog image post-->
+                        @foreach($blogs as $blog)
                         <div class="post-item" data-animation="fadeInUp" data-animation-delay="0">
                             <div class="post-image">
                                 <a href="#">
-                                    <img alt="" src="images/blog/thumb/4.jpg">
+                                    <img alt="" src="{{$blog->image_location}}">
                                 </a>
                             </div>
                             <div class="post-content-details">
                                 <div class="post-title">
-                                    <h3><a href="#">Image post example</a></h3>
-                                </div>
-                                <div class="post-info">
-                                    <span class="post-autor">Post by: <a href="#">Alea Grande</a></span>
-                                    <span class="post-category">in <a href="#">Productivity</a></span>
+                                    <h3><a href="#">{{$blog->title}}</a></h3>
                                 </div>
                                 <div class="post-description">
-                                    <p>Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet. Ut nec metus a mi ullamcorper hendrerit.</p>
+                                    <p>{{substr($blog->body, 0, 190)}}</p>
 
                                     <div class="post-info">
                                         <a class="read-more" href="blog-post.html">read more <i class="fa fa-long-arrow-right"></i></a>
@@ -334,9 +244,9 @@
 
                             <div class="post-meta">
                                 <div class="post-date">
-                                    <span class="post-date-day">19</span>
-                                    <span class="post-date-month">January</span>
-                                    <span class="post-date-year">2015</span>
+                                    <span class="post-date-day">{{getDateForBlog($blog->created_at, 0)}}</span>
+                                    <span class="post-date-month">{{getDateForBlog($blog->created_at, 1)}}</span>
+                                    <span class="post-date-year">{{getDateForBlog($blog->created_at, 2)}}</span>
                                 </div>
 
                                 <div class="post-comments">
@@ -348,109 +258,12 @@
                                 <div class="post-comments">
                                     <a href="#">
                                         <i class="fa fa-share-alt"></i>
-                                        <span class="post-comments-number">324</span>
+                                        <span class="post-comments-number">{{$blog->share}}</span>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Blog slider post-->
-                        <div class="post-item" data-animation="fadeInUp" data-animation-delay="200">
-
-                            <div class="post-image">
-                                <a href="#">
-                                    <img alt="" src="images/blog/thumb/5.jpg">
-                                </a>
-                            </div>
-
-                            <div class="post-content-details">
-                                <div class="post-title">
-                                    <h3><a href="#">Slider post demo</a></h3>
-                                </div>
-                                <div class="post-info">
-                                    <span class="post-autor">Post by: <a href="#">Alea Grande</a></span>
-                                    <span class="post-category">in <a href="#">Productivity</a></span>
-                                </div>
-                                <div class="post-description">
-                                    <p>Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet. Ut nec metus a mi ullamcorper hendrerit.
-
-                                    </p>
-
-                                    <div class="post-info">
-                                        <a class="read-more" href="blog-post.html">read more <i class="fa fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-meta">
-                                <div class="post-date">
-                                    <span class="post-date-day">16</span>
-                                    <span class="post-date-month">January</span>
-                                    <span class="post-date-year">2015</span>
-                                </div>
-
-                                <div class="post-comments">
-                                    <a href="#">
-                                        <i class="fa fa-comments-o"></i>
-                                        <span class="post-comments-number">324</span>
-                                    </a>
-                                </div>
-                                <div class="post-comments">
-                                    <a href="#">
-                                        <i class="fa fa-share-alt"></i>
-                                        <span class="post-comments-number">324</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Blog image post-->
-                        <div class="post-item" data-animation="fadeInUp" data-animation-delay="400">
-                            <div class="post-image">
-                                <a href="#">
-                                    <img alt="" src="images/blog/thumb/6.jpg">
-                                </a>
-                            </div>
-                            <div class="post-content-details">
-                                <div class="post-title">
-                                    <h3><a href="#">Image post example</a></h3>
-                                </div>
-                                <div class="post-info">
-                                    <span class="post-autor">Post by: <a href="#">Alea Grande</a></span>
-                                    <span class="post-category">in <a href="#">Productivity</a></span>
-                                </div>
-                                <div class="post-description">
-                                    <p>Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet. Ut nec metus a mi ullamcorper hendrerit.
-
-                                    </p>
-
-                                    <div class="post-info">
-                                        <a class="read-more" href="blog-post.html">read more <i class="fa fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="post-meta">
-                                <div class="post-date">
-                                    <span class="post-date-day">14</span>
-                                    <span class="post-date-month">February</span>
-                                    <span class="post-date-year">2015</span>
-                                </div>
-
-                                <div class="post-comments">
-                                    <a href="#">
-                                        <i class="fa fa-comments-o"></i>
-                                        <span class="post-comments-number">324</span>
-                                    </a>
-                                </div>
-                                <div class="post-comments">
-                                    <a href="#">
-                                        <i class="fa fa-share-alt"></i>
-                                        <span class="post-comments-number">324</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-
-
+                        @endforeach
                     </div>
                     <!-- END: Blog post-->
                 </div>
@@ -466,24 +279,11 @@
                     <span class="lead">As an integrated IT services providing firm, we serve a diverse list of clients and industries. Our Customer centric approach is reflected in its clientele that includes top notch organizations across the globe.</span>
                 </div>
                 <div class="carousel clients-carousel" data-carousel-col="6" data-carousel-col-xs="2">
+                    @foreach($clients as $client)
                     <div>
                         <a href="#"><img alt="" src="images/clients/1.png"> </a>
                     </div>
-                    <div>
-                        <a href="#"><img alt="" src="images/clients/2.png"> </a>
-                    </div>
-                    <div>
-                        <a href="#"><img alt="" src="images/clients/3.png"> </a>
-                    </div>
-                    <div>
-                        <a href="#"><img alt="" src="images/clients/4.png"> </a>
-                    </div>
-                    <div>
-                        <a href="#"><img alt="" src="images/clients/5.png"> </a>
-                    </div>
-                    <div>
-                        <a href="#"><img alt="" src="images/clients/6.png"> </a>
-                    </div>
+                    @endforeach
                 </div>
             </div>
 

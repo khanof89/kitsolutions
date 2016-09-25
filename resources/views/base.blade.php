@@ -50,6 +50,8 @@
 <body class="wide">
 
 @yield('content')
+
+
 <!-- END: WRAPPER -->
 
 <!-- GO TOP BUTTON -->

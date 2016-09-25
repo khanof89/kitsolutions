@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Menu;
+use App\Models\Blog;
+use App\Models\Client;
+use App\Models\Service;
 use App\Models\Slider;
+use App\Models\Statistic;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
 
 class IndexController extends Controller
 {
@@ -15,8 +17,11 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $menus = Menu::with('submenus')->where('active','1')->get();
         $sliders = Slider::with('slidertext')->get();
-        return view('welcome',compact('menus', 'sliders'));
+        $services = Service::get();
+        $statistics = Statistic::get();
+        $clients = Client::get();
+        $blogs = Blog::take(3)->get();
+        return view('welcome',compact('sliders', 'services', 'statistics', 'clients', 'blogs'));
     }
 }
