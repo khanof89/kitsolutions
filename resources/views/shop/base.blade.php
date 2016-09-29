@@ -48,8 +48,7 @@
 
 </head>
 
-    <body class="wide">
-
+<body class="wide">
     @yield('content')
 
 

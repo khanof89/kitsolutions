@@ -17,10 +17,10 @@
     return $result[$type];
   }
 
-  function getColor($id)
 
+  function getColor($id)
   {
-      switch($id)
+      switch ($id)
       {
           case '1':
               return '#917d5d';
@@ -31,4 +31,18 @@
           default:
               return '#ad9979';
       }
+  }
+
+  function rating($ratings)
+  {
+    $value = 0;
+    $counter = 0;
+    foreach($ratings as $rating)
+    {
+      $value += $rating->rating;
+      $counter++;
+    }
+    $result = $value/$counter;
+    return $result;
+
   }

@@ -15,6 +15,7 @@ Route::get('/', 'IndexController@index');
 
   Route::get('shop', 'ShopController@index');
 
+<<<<<<< HEAD
 Route::get('about', 'IndexController@about');
 
 Route::get('services', 'IndexController@services');
@@ -24,3 +25,6 @@ Route::get('clients', 'IndexController@clients');
 Route::get('team', 'IndexController@team');
 
 Route::get('blogs', 'IndexController@blogs');
+=======
+  Route::get('shop/{id}/{slug}', 'ShopController@product');
+>>>>>>> 1ba3c1726718d54201f6a1a2c935a11a7b17d552

@@ -94,9 +94,7 @@
             <div class="col-md-3">
                 <div class="order-select">
                     <h6>Sort by</h6>
-
-                    <p>Showing 1&ndash;12 of 25 results</p>
-
+                    <p>Showing {{($products->currentpage()-1)*$products->perpage()+1}} to {{(($products->currentpage()-1)*$products->perpage())+$products->count()}} of {{$products->total()}} entries</p>
                     <form method="get">
                         <select>
                             <option value="order" selected="selected">Default sorting</option>
@@ -136,38 +134,33 @@
                 <div class="col-md-2">
                     <div class="product">
                         <div class="product-image">
-                            <a href="#"><img alt="Shop product image!" src="{{$product->location}}">
+                            <a href="/shop/{{$product->id}}/{{\Illuminate\Support\Str::slug($product->name)}}"><img alt="Shop product image!" src="{{$product->location}}">
                             </a>
-                            <a href="#"><img alt="Shop product image!" src="{{$product->location}}">
+                            <a href="/shop/{{$product->id}}/{{\Illuminate\Support\Str::slug($product->name)}}"><img alt="Shop product image!" src="{{$product->location}}">
                             </a>
-
 							<span class="product-wishlist">
                                 <a href="#"><i class="fa fa-heart"></i></a>
                             </span>
-
-                            <div class="product-overlay">
-                                <a href="include/ajax/example-shop-product.html" data-lightbox-type="ajax">Quick
-                                    View</a>
-                            </div>
                         </div>
 
                         <div class="product-description">
-                            <div class="product-category">Women</div>
+                            <div class="product-category">@foreach($product->categories as $category) {{$category->category->name}}, @endforeach</div>
                             <div class="product-title">
-                                <h3><a href="#">Bolt Sweatshirt</a></h3>
+                                <h3><a href="#">{{$product->name}}</a></h3>
                             </div>
                             <div class="product-price">
-                                <ins>$15.00</ins>
+                                <ins>{{$product->price}}</ins>
                             </div>
+                            <?php $stars = 0; if(count($product->reviews)) { $stars = rating($product->reviews);}?>
                             <div class="product-rate">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-o"></i>
+                                @for($i=1; $i<=$stars; $i++)
+                                        <i class="fa fa-star"></i>
+                                @endfor
+                                @if($stars <5)
+                                    &nbsp;
+                                    @endif
                             </div>
-                            <div class="product-reviews"><a href="#">6 customer reviews</a>
-                            </div>
+                            <div class="product-reviews"><a href="#">{{$product->reviews->count()}} customer reviews</a></div>
                         </div>
                     </div>
                 </div>
