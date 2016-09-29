@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="footer-logo float-left">
-                        <img alt="" src="images/logo-sm-dark.png">
+                        <img alt="" src="/images/logo-sm-dark.png">
                     </div>
                     <p style="margin-top: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum volutpat quis. Suspendisse consectetur fringilla luctus. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat, facilisis ut venenatis eu, sodales vel dolor.
                     </p>
@@ -17,7 +17,7 @@
 
 
                 <div class="col-md-4">
-                    <div class="widget clearfix widget-contact-us" style="background-image: url('images/world-map.png'); background-position: 50% 55px; background-repeat: no-repeat">
+                    <div class="widget clearfix widget-contact-us" style="background-image: url('/images/world-map.png'); background-position: 50% 55px; background-repeat: no-repeat">
                         <h4 class="widget-title">Contact us</h4>
                         <ul class="list-large list-icons">
                             <li><i class="fa fa-map-marker"></i>
@@ -41,7 +41,7 @@
                 <div class="col-md-4">
 
                     <div class="widget clearfix widget-newsletter">
-                        <form id="widget-subscribe-form" action="include/subscribe-form.php" role="form" method="post" class="form-inline">
+                        <form id="widget-subscribe-form" action="/include/subscribe-form.php" role="form" method="post" class="form-inline">
                             <h4 class="widget-title">Newsletter</h4>
                             <small>Stay informed on our latest news!</small>
                             <div class="input-group">

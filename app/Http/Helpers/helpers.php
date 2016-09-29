@@ -16,3 +16,17 @@
     ];
     return $result[$type];
   }
+
+  function rating($ratings)
+  {
+    $value = 0;
+    $counter = 0;
+    foreach($ratings as $rating)
+    {
+      $value += $rating->rating;
+      $counter++;
+    }
+    $result = $value/$counter;
+    return $result;
+
+  }

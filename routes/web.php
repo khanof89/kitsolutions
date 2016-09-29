@@ -14,3 +14,5 @@
 Route::get('/', 'IndexController@index');
 
   Route::get('shop', 'ShopController@index');
+
+  Route::get('shop/{id}/{slug}', 'ShopController@product');
