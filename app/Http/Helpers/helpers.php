@@ -16,3 +16,19 @@
     ];
     return $result[$type];
   }
+
+  function getColor($id)
+
+  {
+      switch($id)
+      {
+          case '1':
+              return '#917d5d';
+              break;
+          case '2':
+              return '#a08c6c';
+              break;
+          default:
+              return '#ad9979';
+      }
+  }

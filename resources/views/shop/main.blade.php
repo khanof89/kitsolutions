@@ -2,10 +2,63 @@
 
 @section('content')
 
+    <!-- WRAPPER -->
+    <div class="wrapper">
+
+        <!-- HEADER -->
+        <header id="header" class="header-transparent header-dark header-navigation-light">
+            <div id="header-wrap">
+                <div class="container">
+
+                    <!--LOGO-->
+                    <div id="logo">
+                        <a href="/" class="logo" >
+                            <img src="/images/logo.png" alt="Polo Logo ">
+                        </a>
+                    </div>
+                    <!--END: LOGO-->
+
+                    <!--MOBILE MENU -->
+                    <div class="nav-main-menu-responsive">
+                        <button class="lines-button x" type="button" data-toggle="collapse" data-target=".main-menu-collapse">
+                            <span class="lines"></span>
+                        </button>
+                    </div>
+                    <!--END: MOBILE MENU -->
+
+                    <!--TOP SEARCH -->
+                    <div id="top-search"> <a id="top-search-trigger"><i class="fa fa-search"></i><i class="fa fa-close"></i></a>
+                        <form action="/search-results-page.html" method="get">
+                            <input type="text" name="q" class="form-control" value="" placeholder="Start typing & press  &quot;Enter&quot;">
+                        </form>
+                    </div>
+                    <!--END: TOP SEARCH -->
+
+                    <!--NAVIGATION-->
+                @include('menu')
+
+                <!--END: NAVIGATION-->
+                </div>
+            </div>
+        </header>
+        <!-- END: HEADER -->
+
+
+    <!-- PAGE TITLE -->
+    <section id="page-title" class="page-title-center page-title-animate page-title-parallax text-light"  style="background-image: url(/images/parallax/page-title-parallax.jpg)">
+        <div class="background-overlay"></div>
+        <div class="container">
+            <div class="page-title col-md-8">
+                <h1 class="text-uppercase text-medium">Shop Now</h1>
+            </div>
+        </div>
+    </section>
+    <!-- END: PAGE TITLE -->
+{{--
 
         <!-- PAGE TITLE -->
 <section id="page-title" class="page-title-parallax page-title-center text-dark"
-         style="background-image:url(images/parallax/page-title-parallax.jpg);">
+         style="background-image:url(/images/parallax/page-title-parallax.jpg);">
     <div class="container">
         <div class="page-title col-md-8">
             <h1>Shop fullwidth</h1>
@@ -26,6 +79,7 @@
     </div>
 </section>
 <!-- END: PAGE TITLE -->
+--}}
 
 <!-- SHOP PRODUCTS -->
 <section>
@@ -192,4 +246,5 @@
     </div>
 </section>
 <!-- END: DELIVERY INFO -->
+    @include('footer')
 @endsection

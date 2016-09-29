@@ -4,7 +4,7 @@
     <!-- WRAPPER -->
     <div class="wrapper">
         <!-- HEADER -->
-        <header id="header" class="header-fullwidth">
+        <header id="header" class="header-fullwidth header-transparent  header-dark header-navigation-light">
             <div id="header-wrap">
                 <div class="container">
                     <!--LOGO-->
@@ -25,7 +25,7 @@
 
                     <!--SHOPPING CART -->
                     <div id="shopping-cart">
-                        <span class="shopping-cart-items">8</span>
+                        <span class="shopping-cart-items"></span>
                         <a href="#"><i class="fa fa-shopping-cart"></i></a>
                     </div>
                     <!--END: SHOPPING CART -->
@@ -48,15 +48,12 @@
         <!-- END: HEADER -->
 
         <!-- SLIDER -->
-        <section class="no-padding">
-
+        <section id="slider" class="no-padding">
             <div id="slider-carousel" class="boxed-slider">
-
                 @foreach($sliders as $slider)
                     @if(count($slider->location))
-
-                <div style="background-image:url({{$slider->location}});" class="owl-bg-img">
-                    <div class="background-overlay-one"></div>
+                        <div style="background-image:url({{$slider->location}});" class="owl-bg-img">
+                            <div class="background-overlay"></div>
                     <div class="container-fullscreen">
                         <div class="text-middle">
                             <div class="container">
@@ -207,7 +204,7 @@
         </section>
         <!-- END: COUNTERS -->
 
-        <!-- BLOG -->
+        {{--<!-- BLOG -->
         <section class="content background-grey">
             <div class="container">
 
@@ -269,7 +266,7 @@
                 </div>
             </div>
         </section>
-        <!-- END: BLOG -->
+        <!-- END: BLOG -->--}}
 
         <!-- CLIENTS -->
         <section class="p-t-60">
@@ -281,13 +278,14 @@
                 <div class="carousel clients-carousel" data-carousel-col="6" data-carousel-col-xs="2">
                     @foreach($clients as $client)
                     <div>
-                        <a href="#"><img alt="" src="images/clients/1.png"> </a>
+                        <a href="#"><img alt="" src="/images/clients/1.png"> </a>
                     </div>
                     @endforeach
                 </div>
             </div>
 
         </section>
+        </div>
         <!-- END: CLIENTS -->
 
     @include('footer')

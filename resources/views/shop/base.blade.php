@@ -7,7 +7,7 @@
 
 
     <link rel="shortcut icon" href="/images/favicon.png">
-    <title>POLO | The Multi-Purpose HTML5 Template</title>
+    <title>Kakraulia IT Solutions</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -48,70 +48,24 @@
 
 </head>
 
-<body class="wide">
-<!-- WRAPPER -->
-<div class="wrapper">
-
-    <!-- HEADER -->
-    <header id="header" class="header-transparent">
-        <div id="header-wrap">
-            <div class="container">
-
-                <!--LOGO-->
-                <div id="logo">
-                    <a href="index.html" class="logo" data-dark-logo="images/logo-dark.png">
-                        <img src="images/logo.png" alt="Polo Logo">
-                    </a>
-                </div>
-                <!--END: LOGO-->
-
-                <!--MOBILE MENU -->
-                <div class="nav-main-menu-responsive">
-                    <button class="lines-button x">
-                        <span class="lines"></span>
-                    </button>
-                </div>
-                <!--END: MOBILE MENU -->
-
-                <!--SHOPPING CART -->
-                <div id="shopping-cart">
-                    <span class="shopping-cart-items">8</span>
-                    <a href="/shop-cart.html"><i class="fa fa-shopping-cart"></i></a>
-                </div>
-                <!--END: SHOPPING CART -->
-
-                <!--TOP SEARCH -->
-                <div id="top-search"><a id="top-search-trigger"><i class="fa fa-search"></i><i class="fa fa-close"></i></a>
-
-                    <form action="/search-results-page.html" method="get">
-                        <input type="text" name="q" class="form-control" value=""
-                               placeholder="Start typing & press  &quot;Enter&quot;">
-                    </form>
-                </div>
-                <!--END: TOP SEARCH -->
-                <!--NAVIGATION-->
-                @include('menu')
-                <!--END: NAVIGATION-->
-            </div>
-        </div>
-    </header>
-    <!-- END: HEADER -->
-
+    <body class="wide">
 
     @yield('content')
 
-    @include('footer')
-<!-- END: WRAPPER -->
 
-<!-- GO TOP BUTTON -->
-<a class="gototop gototop-button" href="#"><i class="fa fa-chevron-up"></i></a>
+    <!-- END: WRAPPER -->
 
-<!-- Theme Base, Components and Settings -->
-<script src="/js/theme-functions.js"></script>
+    <!-- GO TOP BUTTON -->
+    <a class="gototop gototop-button" href="#"><i class="fa fa-chevron-up"></i></a>
 
-<!-- Custom js file -->
-<script src="/js/custom.js"></script>
+    <!-- Theme Base, Components and Settings -->
+    <script src="js/theme-functions.js"></script>
+
+    <!-- Custom js file -->
+    <script src="js/custom.js"></script>
 
 
-</body>
+
+    </body>
+
 </html>

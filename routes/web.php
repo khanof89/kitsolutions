@@ -14,3 +14,13 @@
 Route::get('/', 'IndexController@index');
 
   Route::get('shop', 'ShopController@index');
+
+Route::get('about', 'IndexController@about');
+
+Route::get('services', 'IndexController@services');
+
+Route::get('clients', 'IndexController@clients');
+
+Route::get('team', 'IndexController@team');
+
+Route::get('blogs', 'IndexController@blogs');

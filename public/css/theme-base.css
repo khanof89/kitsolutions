@@ -68,7 +68,7 @@ body.boxed-simple {
     }
 }
 a {
-    color: #111;
+    color: #ffffff;
     text-decoration: none !important;
 }
 a:focus {
@@ -365,7 +365,7 @@ h6.font-parisienne {
 nav .main-menu a,
 nav .main-menu .dropdown-menu a,
 nav .main-menu .dropdown-submenu > span.dropdown-menu-title-only {
-    color: #111;
+    color: #ffffff;
 }
 #mainMenu > ul > li > a {
     border-bottom: 0 none;

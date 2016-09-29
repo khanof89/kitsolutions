@@ -1,7 +1,7 @@
 <div class="navbar-collapse collapse main-menu-collapse navigation-wrap">
     <div class="container">
         <nav id="mainMenu" class="main-menu mega-menu">
-            <ul class="main-menu nav nav-pills">
+            <ul class="main-menu nav nav-pills" >
                 @foreach($menus as $menu)
                     <li @if(count($menu->submenus)) class="dropdown" @endif>
                         <a href="{{$menu->url}}">

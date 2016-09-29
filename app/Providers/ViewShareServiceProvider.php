@@ -15,7 +15,7 @@ class ViewShareServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('menu', function ($view) {
-            $view->with('menus', Menu::with('submenus')->get());
+            $view->with('menus', Menu::where('active', '1')->with('submenus')->get());
         });
     }
 
