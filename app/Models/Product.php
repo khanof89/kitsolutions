@@ -36,4 +36,13 @@ class Product extends Model
       return $this->hasMany(RelatedProduct::class);
     }
 
+    public function categories()
+    {
+      return $this->hasMany(CategoryProduct::class);
+    }
+
+    public function quantity()
+    {
+      return $this->hasOne(ProductQuantity::class);
+    }
 }
