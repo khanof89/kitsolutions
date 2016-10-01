@@ -54,33 +54,6 @@
         </div>
     </section>
     <!-- END: PAGE TITLE -->
-{{--
-
-        <!-- PAGE TITLE -->
-<section id="page-title" class="page-title-parallax page-title-center text-dark"
-         style="background-image:url(/images/parallax/page-title-parallax.jpg);">
-    <div class="container">
-        <div class="page-title col-md-8">
-            <h1>Shop fullwidth</h1>
-            <span>Shop fullwidth version</span>
-        </div>
-        <div class="breadcrumb col-md-4">
-            <ul>
-                <li><a href="#"><i class="fa fa-home"></i></a>
-                </li>
-                <li><a href="#">Home</a>
-                </li>
-                <li><a href="#">Shop</a>
-                </li>
-                <li class="active"><a href="#">Shop fullwidth</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
-<!-- END: PAGE TITLE -->
---}}
-
 <!-- SHOP PRODUCTS -->
 <section>
     <div class="container-fluid">

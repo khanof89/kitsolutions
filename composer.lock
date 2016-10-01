@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7e7e22da07a7b5ae8378bf8d54a2235e",
-    "content-hash": "76036da3b5b55b91dbe1e1affa01bf9e",
+    "hash": "c6c5aa91fe3f44b6fe552f4d30fe54fc",
+    "content-hash": "60e22e094a08dc150ffbfa5c2076a5fa",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -308,16 +308,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.10",
+            "version": "v5.3.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "6febb0ee61999cde3bc7b2963c8903032bb22691"
+                "reference": "f034a02f38db77d4b0b3e89942394cae456a627f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/6febb0ee61999cde3bc7b2963c8903032bb22691",
-                "reference": "6febb0ee61999cde3bc7b2963c8903032bb22691",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f034a02f38db77d4b0b3e89942394cae456a627f",
+                "reference": "f034a02f38db77d4b0b3e89942394cae456a627f",
                 "shasum": ""
             },
             "require": {
@@ -432,7 +432,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-09-20 13:46:16"
+            "time": "2016-09-29 22:13:17"
         },
         {
             "name": "league/flysystem",
@@ -1817,6 +1817,47 @@
             "time": "2016-08-31 09:05:42"
         },
         {
+            "name": "syscover/shopping-cart",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/syscover/shopping-cart.git",
+                "reference": "848e16ed0545932bcd7579b8e5252bbfd3a7d215"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/syscover/shopping-cart/zipball/848e16ed0545932bcd7579b8e5252bbfd3a7d215",
+                "reference": "848e16ed0545932bcd7579b8e5252bbfd3a7d215",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Syscover\\ShoppingCart\\": "src/Syscover/ShoppingCart"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "SYSCOVER SL",
+                    "email": "info@syscover.com"
+                }
+            ],
+            "description": "Shopping Cart package",
+            "keywords": [
+                "cart",
+                "laravel",
+                "pulsar",
+                "shopping",
+                "shoppingcart",
+                "syscover"
+            ],
+            "time": "2016-09-04 18:09:08"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v2.4.0",
             "source": {
@@ -2178,16 +2219,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "9270140b940ff02e58ec577c237274e92cd40cdd"
+                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/9270140b940ff02e58ec577c237274e92cd40cdd",
-                "reference": "9270140b940ff02e58ec577c237274e92cd40cdd",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/8331b5efe816ae05461b7ca1e721c01b46bafb3e",
+                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e",
                 "shasum": ""
             },
             "require": {
@@ -2219,7 +2260,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-06-10 09:48:41"
+            "time": "2016-09-30 07:12:33"
         },
         {
             "name": "phpdocumentor/type-resolver",
