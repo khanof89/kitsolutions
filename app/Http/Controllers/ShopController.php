@@ -10,6 +10,7 @@ class ShopController extends Controller
     public function index()
     {
       $products = Product::with(['colors', 'sizes','images', 'reviews', 'tags', 'related', 'categories.category'])->paginate(12);
+
       return view('shop.main', compact('products'));
     }
 

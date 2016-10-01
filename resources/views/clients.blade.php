@@ -9,8 +9,8 @@
                 <div class="container">
                     <!--LOGO-->
                     <div id="logo">
-                        <a href="#" class="logo" data-dark-logo="images/logo-dark.png">
-                            <img src="/images/logo.png" alt="Polo Logo">
+                        <a href="#" class="logo" data-dark-logo="/images/K-it-solutions_001_png_002.png">
+                            <img src="/images/K-it-solutions_001_png_002.png" alt="Polo Logo">
                         </a>
                     </div>
                     <!--END: LOGO-->

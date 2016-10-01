@@ -9,8 +9,8 @@
                 <div class="container">
                     <!--LOGO-->
                     <div id="logo">
-                        <a href="#" class="logo" data-dark-logo="images/logo-dark.png">
-                            <img src="/images/logo.png" alt="Polo Logo">
+                        <a href="#" class="logo" data-dark-logo="/images/K-it-solutions_001_png_002.png">
+                            <img src="/images/K-it-solutions_001_png_002.png" alt="Polo Logo">
                         </a>
                     </div>
                     <!--END: LOGO-->
@@ -52,7 +52,7 @@
         <div class="background-overlay"></div>
         <div class="container container-fullscreen">
             <div class="text-middle text-center text-light">
-                <h1 class="text-uppercase text-large" data-animation="fadeInDown" data-animation-delay="100">WE ARE KIT SOLUTIONS!</h1>
+                <h1 class="text-uppercase text-large" data-animation="fadeInDown" data-animation-delay="100">WE ARE KAKRAULIA IT SOLUTION!</h1>
                 <p class="lead" data-animation="fadeInDown" data-animation-delay="300">Know About Us</p>
             </div>
 
