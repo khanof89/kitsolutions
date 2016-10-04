@@ -13,7 +13,7 @@
                     <!--LOGO-->
                     <div id="logo">
                         <a href="/" class="logo" >
-                            <img src="/images/logo.png" alt="Polo Logo ">
+                            <img src="/images/K-it-solutions_001_png_002.png" alt="Polo Logo ">
                         </a>
                     </div>
                     <!--END: LOGO-->
@@ -54,7 +54,8 @@
         </div>
     </section>
     <!-- END: PAGE TITLE -->
-<!-- SHOP PRODUCTS -->
+
+        <!-- SHOP PRODUCTS -->
 <section>
     <div class="container-fluid">
         <div class="row m-b-20">
@@ -96,8 +97,6 @@
                     </form>
                 </div>
             </div>
-
-
         </div>
 
         <!--Product list-->
@@ -115,7 +114,6 @@
                                 <a href="#"><i class="fa fa-heart"></i></a>
                             </span>
                         </div>
-
                         <div class="product-description">
                             <div class="product-category">@foreach($product->categories as $category) {{$category->category->name}}, @endforeach</div>
                             <div class="product-title">

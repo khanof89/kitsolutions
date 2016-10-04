@@ -2,6 +2,10 @@
 
 @section('content')
 
+        <input type="hidden" value="{{csrf_token()}}" id="token">
+        <input type="hidden" value="{{$product->name}}" id="name">
+        <input type="hidden" value="{{$product->id}}" id="id">
+
         <!-- PAGE TITLE -->
 <section id="page-title" class="page-title-parallax page-title-center text-dark" style="background-image:url(/images/parallax/page-title-parallax.jpg);">
     <div class="container">
@@ -33,15 +37,14 @@
                 <div class="col-md-5">
                     <div class="product-image">
                         <div class="carousel" data-carousel-col="1" data-lightbox-type="gallery">
-                            <a href="{{$product->location}}" title="Shop product image!"><img alt="Shop product image!" src="{{$product->location}}">
+                            <a href="{{$product->location}}" title="{{$product->name}} image"><img alt="Shop product image!" src="{{$product->location}}">
                             </a>
                             @foreach($product->images as $image)
-                            <a href="{{$image->location}}" title="Shop product image!"><img alt="Shop product image!" src="{{$image->location}}"></a>
+                            <a href="{{$image->location}}" title="{{$product->name}} image"><img alt="Shop product image!" src="{{$image->location}}"></a>
                                 @endforeach
                         </div>
                     </div>
                 </div>
-
 
                 <div class="col-md-7">
                     <div class="product-description">
@@ -69,7 +72,6 @@
                             </p>
                         </div>
                         <div class="seperator m-t-20 m-b-10"></div>
-
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -78,7 +80,7 @@
                                 @foreach($product->sizes as $size)
                                 <li>
                                     <label>
-                                        <input type="radio" checked="checked" value="{{$size->id}}" name="product-size"><span>{{$size->size}}</span>
+                                        <input type="radio" id="product-size" checked="checked" value="{{$size->id}}" name="product-size"><span>{{$size->size}}</span>
                                     </label>
                                 </li>
                                 @endforeach
@@ -87,7 +89,7 @@
                         <div class="col-md-6">
                             <h6>Select the color</h6>
                             <label class="sr-only">Color</label>
-                            <select style="padding:10px">
+                            <select style="padding:10px" id="color">
                                 <option value="">Select color…</option>
                                 @foreach($product->colors as $color)
                                 <option value="{{$color->id}}">{{$color->color}}</option>
@@ -99,7 +101,7 @@
                     <div class="col-md-6">
                         <h6>Select quantity</h6>
                         <label class="sr-only">Color</label>
-                        <select style="padding:10px">
+                        <select style="padding:10px" id="quantity">
                             <option value="">Select Quantity</option>
                             @for($i=1;$i<=$product->quantity;$i++)
                                 <option value="{{$i}}">{{$i}}</option>
@@ -108,7 +110,7 @@
                     </div>
                     <br />
                     <div class="m-t-20">
-                        <button type="button" class="btn btn-primary btn-lg"><i class="fa fa-shopping-cart"></i> Add to cart</button>
+                        <button type="button" id="add-to-cart" class="btn btn-primary btn-lg"><i class="fa fa-shopping-cart"></i> Add to cart</button>
                     </div>
 
                 </div>

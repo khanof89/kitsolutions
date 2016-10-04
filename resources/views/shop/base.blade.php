@@ -58,13 +58,12 @@
     <a class="gototop gototop-button" href="#"><i class="fa fa-chevron-up"></i></a>
 
     <!-- Theme Base, Components and Settings -->
-    <script src="js/theme-functions.js"></script>
+    <script src="/js/theme-functions.js"></script>
 
     <!-- Custom js file -->
-    <script src="js/custom.js"></script>
+    <script src="/js/custom.js"></script>
 
-
-
+<script src="/js/functions.js"></script>
     </body>
 
 </html>

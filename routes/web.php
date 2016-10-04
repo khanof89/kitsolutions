@@ -27,3 +27,6 @@ Route::get('blogs', 'IndexController@blogs');
 
 Route::get('shop/{id}/{slug}', 'ShopController@product');
 
+  Route::post('add-to-cart', 'ShopController@addToCart');
+
+  Route::get('cart', 'ShopController@getCart');
