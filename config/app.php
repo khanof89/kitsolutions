@@ -163,7 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         \App\Providers\ViewShareServiceProvider::class,
-        Syscover\ShoppingCart\ShoppingCartServiceProvider::class,
+        Lutforrahman\Nujhatcart\NujhatcartServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -227,8 +227,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Sphupport\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'CartProvider' => Syscover\ShoppingCart\Facades\CartProvider::class,
-
+        'Cart' => Lutforrahman\Nujhatcart\Facades\Cart::class,
     ],
 
 ];

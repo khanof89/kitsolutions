@@ -26,7 +26,7 @@
                     <!--SHOPPING CART -->
                     <div id="shopping-cart">
                         <span class="shopping-cart-items"></span>
-                        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                        <a href="/cart"><i class="fa fa-shopping-cart"></i><sup>{{count(\Lutforrahman\Nujhatcart\Facades\Cart::contents())}}</sup></a>
                     </div>
                     <!--END: SHOPPING CART -->
 

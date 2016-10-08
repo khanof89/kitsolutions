@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Bnet\Cart\Facades\CartFacade;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Lutforrahman\Nujhatcart\Facades\Cart;
 use Syscover\ShoppingCart\CartProvider;
 use Syscover\ShoppingCart\Item;
 
@@ -30,25 +34,39 @@ class ShopController extends Controller
 
   public function addToCart(Request $request)
   {
-    \Log::info('id'. $request->id. ' name '. $request->name. ' color '. $request->color. ' size '. $request->size);
-    $cart = new CartProvider;
-    $cart->instance()->add(new Item($request->id, $request->name, $request->quantity, $request->color));
-    //new TaxRule('IVA', 21), ['size' => $request->size]
+    unset($request['_token']);
 
-    if($cart)
+    $product = Product::where('id', $request->id)->with(['colors','images'])->first();
+
+    $item = [
+        'id' => $request->id,
+        'sku' => $request->sku,
+        'name' => $request->name,
+        'slug' => $request->id.'/'. Str::slug($request->name),
+        'image' => $product->location,
+        'description' => $product->name. '<br /> Size:'. $request->size. '<br /> Color:'. $request->color,
+        'quantity' => $request->quantity,
+        'price' => $product->price,
+        'discount' => 0,
+        'tax' => 0,
+        'options' => array('size' => $request->size, 'color' => $request->color)
+    ];
+
+    $added = Cart::insert($item);
+    if($added)
     {
-      return json_encode($cart);
+      return json_encode('success');
+    }
+    else
+    {
+      return json_encode('failure');
     }
   }
 
   public function getCart()
   {
-    $cart = new CartProvider();
-    foreach ($cart->instance()->getCartItems() as $item)
-    {
-      echo'<pre>';
-      print_r($item);
-      echo '</pre>';
-    }
+    $items = Cart::contents();
+    return view('shop.cart', compact('items'));
+
   }
 }

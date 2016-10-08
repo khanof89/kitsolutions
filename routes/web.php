@@ -30,3 +30,8 @@ Route::get('shop/{id}/{slug}', 'ShopController@product');
   Route::post('add-to-cart', 'ShopController@addToCart');
 
   Route::get('cart', 'ShopController@getCart');
+
+  Route::get('check', function()
+  {
+    return count(\Lutforrahman\Nujhatcart\Facades\Cart::contents());
+  });
