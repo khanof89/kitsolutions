@@ -42,13 +42,33 @@ $('.minus').click(function()
     var quantity = quantityField.val();
     var price = $('#amount-'+id).attr('data-amount');
     var totalClass = $('.total-'+id);
+    var cartTotalClass = $('.cartTotal');
+    var item_id = $('#item_id').val();
+    var token = $("input[name='_token']").val();
     if(quantity > 0) {
         quantity = quantity - 1;
         quantityField.val(quantity);
+        $.post('update-cart', {'item_id': item_id, '_token' : token, 'value' : 1}, function(data)
+        {
+           var parsed = JSON.parse(data);
+            if(parsed === 'success')
+            {
+                var total = price * quantity;
+                totalClass.empty();
+                totalClass.append(total);
+                var cartTotal = cartTotalClass.data('value');
+                cartTotal = parseInt(cartTotal) - parseInt(price);
+                cartTotalClass.empty();
+                cartTotalClass.append("INR"+cartTotal);
+                cartTotalClass.data('value', cartTotal);
+
+                console.log('show the success modal');
+            }
+            else{
+                console.log('show the failure modal');
+            }
+        });
     }
-    var total = price * quantity;
-    totalClass.empty();
-    totalClass.append(total);
 });
 
 $('.plus').click(function()
@@ -60,14 +80,61 @@ $('.plus').click(function()
     var totalClass = $('.total-'+id);
     var cartTotalClass = $('.cartTotal');
     var price = $('#amount-'+id).attr('data-amount');
+    var item_id = $('#item_id').val();
+    var token = $("input[name='_token']").val();
     quantity = parseInt(quantity) + value;
     quantityField.val(quantity);
-    var totalPerProduct = price * quantity;
-    totalClass.empty();
-    totalClass.append(totalPerProduct);
-    var cartTotal = cartTotalClass.data('value');
-    cartTotal = parseInt(cartTotal) + parseInt(price);
-    cartTotalClass.empty();
-    cartTotalClass.append("INR"+cartTotal);
-    cartTotalClass.data('value', cartTotal);
+    $.post('update-cart', {'item_id': item_id, '_token' : token, 'value' : 2}, function(data)
+    {
+        var parsed = JSON.parse(data);
+        if(parsed === 'success')
+        {
+            var totalPerProduct = price * quantity;
+            totalClass.empty();
+            totalClass.append(totalPerProduct);
+            var cartTotal = cartTotalClass.data('value');
+            cartTotal = parseInt(cartTotal) + parseInt(price);
+            cartTotalClass.empty();
+            cartTotalClass.append("INR"+cartTotal);
+            cartTotalClass.data('value', cartTotal);
+            console.log('show the success modal');
+        }
+        else{
+            console.log('show the failure modal');
+        }
+    });
+});
+
+$('#login').click(function()
+{
+    $('#login-modal').modal('show');
+});
+
+$('#process-login').click(function()
+{
+    var email = $('#email').val();
+    var password = $('#password').val();
+    var token = $("input[name=_token]").val();
+
+    $.post('/login', {'email' : email, 'password' : password, '_token' : token}, function(data)
+    {
+       var parsed = JSON.parse(data);
+        if(parsed === 'success')
+        {
+            window.location.replace("http://lalit.dev/checkout");
+        }
+    });
+});
+
+$("input[name='optionsRadios']").click(function()
+{
+    var options = $("input[name='optionsRadios']:checked").val();
+    if(options == 'offline')
+    {
+        $('#pay_button').html('Place order');
+    }
+    else
+    {
+        $('#pay_button').html('Proceed to pay');
+    }
 });

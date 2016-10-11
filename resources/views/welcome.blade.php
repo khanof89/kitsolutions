@@ -75,23 +75,6 @@
         </section>
         <!-- END: SLIDER -->
 
-
-        <!-- WELCOME -->
-        {{--<section class="p-b-0">
-            <div class="container">
-                <div class="heading heading-center m-b-40" data-animation="fadeInUp">
-                    <h2>WELCOME TO THE WORLD OF POLO</h2>
-                    <span class="lead">Create amam ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                </div>
-                <div class="row" data-animation="fadeInUp">
-                    <div class="col-md-12">
-                        <img class="img-responsive" src="/images/other/responsive-1.jpg" alt="Welcome to POLO">
-                    </div>
-                </div>
-            </div>
-        </section>--}}
-        <!-- END: WELCOME -->
-
         <!-- WHAT WE DO -->
         <section class="background-grey">
             <div class="container">

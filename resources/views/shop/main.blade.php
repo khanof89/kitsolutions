@@ -9,7 +9,6 @@
         <header id="header" class="header-transparent header-dark header-navigation-light">
             <div id="header-wrap">
                 <div class="container">
-
                     <!--LOGO-->
                     <div id="logo">
                         <a href="/" class="logo" >
@@ -25,6 +24,13 @@
                         </button>
                     </div>
                     <!--END: MOBILE MENU -->
+
+                    <!--SHOPPING CART -->
+                    <div id="shopping-cart">
+                        <span class="shopping-cart-items"></span>
+                        <a href="/cart"><i class="fa fa-shopping-cart"></i><sup>{{count(\Lutforrahman\Nujhatcart\Facades\Cart::contents())}}</sup></a>
+                    </div>
+                    <!--END: SHOPPING CART -->
 
                     <!--TOP SEARCH -->
                     <div id="top-search"> <a id="top-search-trigger"><i class="fa fa-search"></i><i class="fa fa-close"></i></a>

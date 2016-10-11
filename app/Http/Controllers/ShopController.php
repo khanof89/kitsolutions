@@ -69,4 +69,42 @@ class ShopController extends Controller
     return view('shop.cart', compact('items'));
 
   }
+
+  public function updatecart(Request $request)
+  {
+    try
+    {
+      $itemId = $request->item_id;
+      $value = $request->value;
+      $cart = Cart::get($itemId);
+      $quantity = $cart->quantity;
+      if($value == 1)
+      {
+        $quantity = $quantity - 1;
+        Cart::update($itemId, $quantity);
+      } else
+      {
+        $quantity = $quantity + 1;
+        Cart::update($itemId, $quantity);
+      }
+
+      return json_encode('success');
+    }
+    catch(\Exception $e)
+    {
+      return json_encode('failure');
+    }
+  }
+
+  public function checkout()
+  {
+    $items = Cart::contents();
+    $subTotal = 0;
+    foreach($items as $item)
+    {
+      $subTotal += $item->quantity * $item->price;
+    }
+
+   return view('shop.checkout', compact('items', 'subTotal'));
+  }
 }

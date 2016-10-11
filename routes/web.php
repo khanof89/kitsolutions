@@ -31,7 +31,14 @@ Route::get('shop/{id}/{slug}', 'ShopController@product');
 
   Route::get('cart', 'ShopController@getCart');
 
+  Route::post('update-cart', 'ShopController@updateCart');
+
+  Route::post('login', 'AuthController@doLogin');
+
+  Route::get('checkout', 'ShopController@checkout');
+
   Route::get('check', function()
   {
-    return count(\Lutforrahman\Nujhatcart\Facades\Cart::contents());
+    $update = \Lutforrahman\Nujhatcart\Facades\Cart::update('abf641c78f67274481735ce10ed37501', '3');
+    return \Lutforrahman\Nujhatcart\Facades\Cart::contents();
   });
