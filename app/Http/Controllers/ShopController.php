@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\User;
 use Bnet\Cart\Facades\CartFacade;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
