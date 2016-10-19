@@ -7,7 +7,8 @@
                     <div class="footer-logo float-left">
                         <img alt="" src="/images/K-it-solutions_001_png_002.png">
                     </div>
-                    <p style="margin-top: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum volutpat quis. Suspendisse consectetur fringilla luctus. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat, facilisis ut venenatis eu, sodales vel dolor.
+                    <p style="margin-top: 12px;">
+                        Kakraulia IT Solution is your one stop destination for a plethora of networking services and security. Initially registered as Sal Infotech in 2013, we have been quietly redefining the online networking solutions experience. Partner with us today for your data management; computer and hardware lease, rent and sale; and related IT services at workable rates.
                     </p>
 
                 </div>

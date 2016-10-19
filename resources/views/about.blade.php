@@ -84,7 +84,7 @@
                 <div style="background-color:{{getColor($i)}}" class="col-md-4">
                     <h1 class="text-large text-uppercase">{{$i}}</h1>
                     <h3>{{$menu->heading}}</h3>
-                    <span>{{$menu->description}}</span>
+                    <span>{!! $menu->description !!}</span>
                 </div>
                 <?php $i++; ?>
             @endforeach

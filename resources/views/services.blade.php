@@ -69,7 +69,7 @@
                     <div class="col-md-4">
                         <div class="icon-box effect medium border center">
                             <div class="icon">
-                                <a href="#"><i class="{{$service->image}}"></i></a>
+                                <i class="{{$service->image}}"></i>
                             </div>
                             <h3>{{$service->heading}}</h3>
                             <p>{{$service->description}}</p>
@@ -80,16 +80,6 @@
         </div>
 
     </section>
-
-    {{--<div class="jumbotron jumbotron-fullwidth background-colored text-light m-b-0">
-        <div class="container">
-            <h3>Simply, we are the best!</h3>
-            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <a class="button transparent icon-right" href="#"><span>Buy POLO</span></a>
-        </div>
-    </div>--}}
-
-
     @include('footer')
 
 @endsection()
