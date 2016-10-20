@@ -110,6 +110,14 @@ $('#login').click(function()
     $('#login-modal').modal('show');
 });
 
+$('#show-register').click(function()
+{
+    event.preventDefault();
+    $('#login-modal').modal('hide');
+    $('#register-modal').modal('show');
+});
+
+
 $('#process-login').click(function()
 {
     var email = $('#email').val();
@@ -137,4 +145,33 @@ $("input[name='optionsRadios']").click(function()
     {
         $('#pay_button').html('Proceed to pay');
     }
+});
+
+
+$('#register').click(function()
+{
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var password = $('#password').val();
+    var token = $("input[name=_token]").val();
+
+    $.post('/register', {'name' : name, 'email': email, 'password' : password, '_token' : token}, function(data)
+    {
+        var parsed = JSON.parse(data);
+        if(parsed === 'success')
+        {
+            $('#notification-title').html('Success');
+            $('#notification-body').html('Account created successfully');
+            $('#register-modal').modal('hide');
+            $('#notification-modal').modal('show');
+        }
+        else
+        {
+            $('#notification-title').html('Error');
+            $('#notification-body').html('Something went wrong please try again');
+            $('#register-modal').modal('hide');
+            $('#notification-modal').modal('show');
+        }
+    });
+
 });
