@@ -97,7 +97,7 @@
         <!-- END WHAT WE DO -->
 
         <!-- SERVICES -->
-        <section>
+       {{-- <section>
             <div class="container">
                 <div class="heading heading-center">
                     <h2>SERVICES</h2>
@@ -163,7 +163,7 @@
                 </div>
             </div>
 
-        </section>
+        </section>--}}
         <!-- END: SERVICES -->
 
         <!-- COUNTERS -->
@@ -171,7 +171,7 @@
             <div class="container">
                 <div class="row">
                     @foreach($statistics as $statistic)
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="text-center">
                             <div class="icon"><i class="{{$statistic->icon}}"></i></div>
                             <div class="counter">
@@ -187,69 +187,7 @@
         </section>
         <!-- END: COUNTERS -->
 
-        {{--<!-- BLOG -->
-        <section class="content background-grey">
-            <div class="container">
 
-                <div class="heading heading text-left">
-                    <h2>OUR BLOG</h2>
-                    <span class="lead">As an integrated IT services providing firm, we serve a diverse list of clients and industries. Our Customer centric approach is reflected in its clientele that includes top notch organizations across the globe. KIT has also built a global presence by establishing an international network of partners and affiliates. </span>
-                </div>
-            </div>
-
-            <div id="blog">
-                <div class="container">
-                    <!-- Blog post-->
-                    <div class="post-content  post-block post-modern post-3-columns post-light-background">
-                        <!-- Blog image post-->
-                        @foreach($blogs as $blog)
-                        <div class="post-item" data-animation="fadeInUp" data-animation-delay="0">
-                            <div class="post-image">
-                                <a href="#">
-                                    <img alt="" src="{{$blog->image_location}}">
-                                </a>
-                            </div>
-                            <div class="post-content-details">
-                                <div class="post-title">
-                                    <h3><a href="#">{{$blog->title}}</a></h3>
-                                </div>
-                                <div class="post-description">
-                                    <p>{{substr($blog->body, 0, 190)}}</p>
-
-                                    <div class="post-info">
-                                        <a class="read-more" href="blog-post.html">read more <i class="fa fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="post-meta">
-                                <div class="post-date">
-                                    <span class="post-date-day">{{getDateForBlog($blog->created_at, 0)}}</span>
-                                    <span class="post-date-month">{{getDateForBlog($blog->created_at, 1)}}</span>
-                                    <span class="post-date-year">{{getDateForBlog($blog->created_at, 2)}}</span>
-                                </div>
-
-                                <div class="post-comments">
-                                    <a href="#">
-                                        <i class="fa fa-comments-o"></i>
-                                        <span class="post-comments-number">324</span>
-                                    </a>
-                                </div>
-                                <div class="post-comments">
-                                    <a href="#">
-                                        <i class="fa fa-share-alt"></i>
-                                        <span class="post-comments-number">{{$blog->share}}</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                    <!-- END: Blog post-->
-                </div>
-            </div>
-        </section>
-        <!-- END: BLOG -->--}}
 
         <!-- CLIENTS -->
         <section class="p-t-60">
