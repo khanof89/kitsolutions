@@ -31,10 +31,13 @@ class AuthController extends Controller {
       $user->password = bcrypt($password);
       $user->save();
 
+      \Auth::loginUsingId($user->id);
+
       return json_encode('success');
     }
     catch(\Exception $e)
     {
+      \Log::error($e->getMessage());
       return json_encode('failure');
     }
 

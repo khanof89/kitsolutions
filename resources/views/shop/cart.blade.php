@@ -340,7 +340,9 @@
 
         @include('partials.login')
 
-        @include('partials.register)
+        @include('partials.register')
+
+        @include('partials.notification')
 
 
 </div>

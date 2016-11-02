@@ -11,21 +11,21 @@
 |
 */
 
-Route::get('/', 'IndexController@index');
+  Route::get('/', 'IndexController@index');
 
-Route::get('shop', 'ShopController@index');
+  Route::get('shop', 'ShopController@index');
 
-Route::get('about', 'IndexController@about');
+  Route::get('about', 'IndexController@about');
 
-Route::get('services', 'IndexController@services');
+  Route::get('services', 'IndexController@services');
 
-Route::get('clients', 'IndexController@clients');
+  Route::get('clients', 'IndexController@clients');
 
-Route::get('team', 'IndexController@team');
+  Route::get('team', 'IndexController@team');
 
-Route::get('blogs', 'IndexController@blogs');
+  Route::get('blogs', 'IndexController@blogs');
 
-Route::get('shop/{id}/{slug}', 'ShopController@product');
+  Route::get('shop/{id}/{slug}', 'ShopController@product');
 
   Route::post('add-to-cart', 'ShopController@addToCart');
 
@@ -35,10 +35,26 @@ Route::get('shop/{id}/{slug}', 'ShopController@product');
 
   Route::post('login', 'AuthController@doLogin');
 
+  Route::post('register', 'AuthController@doRegister');
+
   Route::get('checkout', 'ShopController@checkout');
+
+  Route::post('checkout', 'ShopController@processCheckout');
 
   Route::get('check', function()
   {
     $update = \Lutforrahman\Nujhatcart\Facades\Cart::update('abf641c78f67274481735ce10ed37501', '3');
     return \Lutforrahman\Nujhatcart\Facades\Cart::contents();
   });
+
+
+  Route::group(['prefix' => 'admin'], function()
+  {
+    Route::get('/', 'Admin\LoginController@showLogin');
+
+    Route::post('/', 'Admin\LoginController@doLogin');
+
+    Route::get('dashboard', 'Admin\IndexController@index');
+  });
+
+

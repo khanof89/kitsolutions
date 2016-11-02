@@ -66,11 +66,11 @@
     </section>
     <!-- END: PAGE TITLE -->
 
+    {!! Form::open(['class' => "sep-top-md"]) !!}
     <!-- SHOP CHECKOUT -->
     <section id="shop-checkout">
         <div class="container">
             <div class="shop-cart">
-                <form method="post" class="sep-top-md">
                     <div class="row">
                         <div class="col-md-6 no-padding">
                             <div class="col-md-12">
@@ -128,7 +128,7 @@
                                                 <div class="col-md-12 form-group">
                                                     <label class="sr-only">Country</label>
                                                     <select class="fullwidth">
-                                                        <option value="AX">Åland Islands</option>
+                                                        <option value="AX">Aland Islands</option>
                                                         <option value="AF">Afghanistan</option>
                                                         <option value="AL">Albania</option>
                                                         <option value="DZ">Algeria</option>
@@ -431,9 +431,6 @@
                         </div>
                     </div>
 
-
-                </form>
-
                 <div class="seperator"><i class="fa fa-credit-card"></i>
                 </div>
 
@@ -502,7 +499,7 @@
                                     </td>
 
                                     <td class="cart-product-name text-right">
-                                        <span class="amount color lead"><strong>{{$subTotal}}</strong></span>
+                                        <input type="text" value="{{$subTotal}}" class="form-control input-lg text-right" name="total" readonly>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -537,7 +534,8 @@
                             </tr>
                             </tbody>
                         </table>
-                        <a class="button color button-3d rounded icon-left float-right" href="#"><span id="pay_button">Proceed to Pay</span></a>
+                        <input type="submit" class="button color button-3d rounded icon-left float-right" id="pay_button" value="Proceed to pay">
+                        {{--<button class="button color button-3d rounded icon-left float-right"><span id="pay_button">Proceed to Pay</span></button>--}}
                     </div>
 
                 </div>
@@ -546,6 +544,7 @@
             </div>
         </div>
     </section>
+    {!! Form::close() !!}
     <!-- END: SHOP CHECKOUT -->
 
     <!-- DELIVERY INFO -->
