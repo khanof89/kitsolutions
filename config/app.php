@@ -164,6 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         \App\Providers\ViewShareServiceProvider::class,
         Lutforrahman\Nujhatcart\NujhatcartServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -228,6 +229,8 @@ return [
         'Validator' => Illuminate\Sphupport\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Cart' => Lutforrahman\Nujhatcart\Facades\Cart::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

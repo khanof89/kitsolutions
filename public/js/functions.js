@@ -12,19 +12,37 @@ $('#add-to-cart').click(function()
     var token = $('#token').val();
     var sku = id + '-' + convertToSlug(name);
 
-    $.post('/add-to-cart', {
-        'name' : name,
-        'id' : id,
-        'size' : size,
-        'quantity' : quantity,
-        'color' : color,
-        '_token' : token,
-        'sku' : sku
-    }, function(data)
+    console.log('size ' + size + ' quantity ' + quantity + ' color ' + color);
+    if( quantity != '' && color != '') {
+        $.post('/add-to-cart', {
+            'name': name,
+            'id': id,
+            'size': size,
+            'quantity': quantity,
+            'color': color,
+            '_token': token,
+            'sku': sku
+        }, function (data) {
+            var parsed = JSON.parse(data);
+
+            if (parsed === 'success') {
+                $('.modal-title').html('Success');
+                $('.modal-body').html('Product added in your cart');
+                $('#info-modal').modal('show');
+            }
+            else {
+                $('.modal-title').html('Failed');
+                $('.modal-body').html('Something went wrong please try again');
+                $('#info-modal').modal('show');
+            }
+        });
+    }
+    else
     {
-        var parsed = JSON.parse(data);
-        console.log(parsed);
-    });
+        $('.modal-title').html('Error');
+        $('.modal-body').html('Please select color and quantity');
+        $('#info-modal').modal('show');
+    }
 });
 
 function convertToSlug(Text) {
@@ -110,6 +128,14 @@ $('#login').click(function()
     $('#login-modal').modal('show');
 });
 
+$('#show-register').click(function()
+{
+    event.preventDefault();
+    $('#login-modal').modal('hide');
+    $('#register-modal').modal('show');
+});
+
+
 $('#process-login').click(function()
 {
     var email = $('#email').val();
@@ -137,4 +163,45 @@ $("input[name='optionsRadios']").click(function()
     {
         $('#pay_button').html('Proceed to pay');
     }
+});
+
+
+$('#process-register').click(function()
+{
+    var name = $('#register-name').val();
+    var email = $('#register-email').val();
+    var password = $('#register-password').val();
+    var token = $("input[name=_token]").val();
+
+    $.post('/register', {'name' : name, 'email': email, 'password' : password, '_token' : token}, function(data)
+    {
+        var parsed = JSON.parse(data);
+        console.log(parsed);
+        if(parsed === 'success')
+        {
+            $('#notification-title').html('Success');
+            $('#notification-body').html('Account created successfully');
+            $('#register-modal').modal('hide');
+            $('#notification-modal').modal('show');
+        }
+        else
+        {
+            $('#notification-title').html('Error');
+            $('#notification-body').html('Something went wrong please try again');
+            $('#register-modal').modal('hide');
+            $('#notification-modal').modal('show');
+        }
+    });
+
+});
+
+$('#registration-close').click(function()
+{
+   $('#notification-modal').modal('hide');
+    location.reload(true);
+});
+
+$('#checkout').click(function()
+{
+
 });

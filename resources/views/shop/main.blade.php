@@ -123,7 +123,7 @@
                         <div class="product-description">
                             <div class="product-category">@foreach($product->categories as $category) {{$category->category->name}}, @endforeach</div>
                             <div class="product-title">
-                                <h3><a href="#">{{$product->name}}</a></h3>
+                                <h3><a href="/shop/{{$product->id}}/{{\Illuminate\Support\Str::slug($product->name)}}">{{$product->name}}</a></h3>
                             </div>
                             <div class="product-price">
                                 <ins>{{$product->price}}</ins>
