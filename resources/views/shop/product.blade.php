@@ -76,8 +76,8 @@
                                                 alt="Shop product image!" src="{{$product->location}}">
                                     </a>
                                     @foreach($product->images as $image)
-                                        <a href="{{$image->location}}" title="{{$product->name}} image"><img
-                                                    alt="Shop product image!" src="{{$image->location}}"></a>
+                                        <a href="/{{$image->location}}" title="{{$product->name}} image"><img
+                                                    alt="Shop product image!" src="/{{$image->location}}"></a>
                                     @endforeach
                                 </div>
                             </div>

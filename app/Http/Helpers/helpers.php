@@ -46,3 +46,20 @@
     return $result;
 
   }
+
+  function colors()
+  {
+      $data = [
+          "1" => "Black",
+          "2" => "White",
+          "3"  => "Blue",
+          "4"  => "Grey",
+          "5" => "Green",
+          "6"   => "Red",
+          "7"  => "Pink",
+          "8" => "Yellow",
+          "9" => "Brown",
+          "10" =>"Metallic"
+      ];
+      return $data;
+  }

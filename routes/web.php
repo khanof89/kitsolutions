@@ -55,6 +55,18 @@
     Route::post('/', 'Admin\LoginController@doLogin');
 
     Route::get('dashboard', 'Admin\IndexController@index');
+
+    Route::get('add-product' , 'Admin\IndexController@doAdd');
+
+      Route::post('add-product' , 'Admin\IndexController@showAdd');
+
+    Route::get('show-product', 'Admin\IndexController@showProducts');
+
+    Route::get ('edit-product/{id}', 'Admin\IndexController@showEdit');
+
+      Route::post ('edit-product/{id}', 'Admin\IndexController@doEdit');
+
+      Route::get ('delete-product/{id}', 'Admin\IndexController@doDelete');
   });
 
 
