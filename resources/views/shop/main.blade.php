@@ -109,19 +109,20 @@
         <div class="shop">
             <div class="row">
                 @foreach($products as $product)
+                    <?php $finalCategory = [];?>
                 <div class="col-md-2">
                     <div class="product">
                         <div class="product-image">
-                            <a href="/shop/{{$product->id}}/{{\Illuminate\Support\Str::slug($product->name)}}"><img alt="Shop product image!" src="{{$product->location}}">
+                            <a href="/shop/{{$product->id}}/{{\Illuminate\Support\Str::slug($product->name)}}"><img alt="Shop product image!" src="{{$product->location}}" style="width:183px; height:215px">
                             </a>
-                            <a href="/shop/{{$product->id}}/{{\Illuminate\Support\Str::slug($product->name)}}"><img alt="Shop product image!" src="{{$product->location}}">
+                            <a href="/shop/{{$product->id}}/{{\Illuminate\Support\Str::slug($product->name)}}"><img alt="Shop product image!" src="{{$product->location}}" style="width:183px; height:215px">
                             </a>
 							<span class="product-wishlist">
                                 <a href="#"><i class="fa fa-heart"></i></a>
                             </span>
                         </div>
                         <div class="product-description">
-                            <div class="product-category">@foreach($product->categories as $category) {{$category->category->name}}, @endforeach</div>
+                            <div class="product-category">@foreach($product->categories as $category) <?php $finalCategory[] = $category->category->name;?> @endforeach {{implode(',', $finalCategory)}}</div>
                             <div class="product-title">
                                 <h3><a href="/shop/{{$product->id}}/{{\Illuminate\Support\Str::slug($product->name)}}">{{$product->name}}</a></h3>
                             </div>
@@ -129,15 +130,15 @@
                                 <ins>{{$product->price}}</ins>
                             </div>
                             <?php $stars = 0; if(count($product->reviews)) { $stars = rating($product->reviews);}?>
-                            <div class="product-rate">
+                            {{--<div class="product-rate">
                                 @for($i=1; $i<=$stars; $i++)
                                         <i class="fa fa-star"></i>
                                 @endfor
                                 @if($stars <5)
                                     &nbsp;
                                     @endif
-                            </div>
-                            <div class="product-reviews"><a href="#">{{$product->reviews->count()}} customer reviews</a></div>
+                            </div>--}}
+                            <div class="product-reviews"><a href="#">{{$product->reviews->count()}} customer review(s)</a></div>
                         </div>
                     </div>
                 </div>

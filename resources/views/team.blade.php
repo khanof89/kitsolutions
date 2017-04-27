@@ -52,7 +52,7 @@
             <div class="background-overlay"></div>
             <div class="container container-fullscreen">
                 <div class="text-middle text-center text-light">
-                    <h1 class="text-uppercase text-large" data-animation="fadeInDown" data-animation-delay="100">Our Awesome Team</h1>
+                    <h1 class="text-uppercase text-large" data-animation="fadeInDown" data-animation-delay="100">Our Team</h1>
                     {{--<p class="lead" data-animation="fadeInDown" data-animation-delay="300">What We Do</p>--}}
                 </div>
 

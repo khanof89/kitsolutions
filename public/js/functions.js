@@ -12,7 +12,6 @@ $('#add-to-cart').click(function()
     var token = $('#token').val();
     var sku = id + '-' + convertToSlug(name);
 
-    console.log('size ' + size + ' quantity ' + quantity + ' color ' + color);
     if( quantity != '' && color != '') {
         $.post('/add-to-cart', {
             'name': name,

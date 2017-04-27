@@ -107,7 +107,7 @@
                                 <div class="product-meta">
                                     <p>Tags:
                                         @foreach($product->tags as $tag)
-                                            <a href="/tag/{{$tag->name}}">{{$tag->name}}</a>,
+                                            <a href="/tag/{{$tag->name}}" style="color:#000000">{{$tag->name}}</a>,
                                         @endforeach
                                     </p>
                                 </div>
